@@ -34,7 +34,7 @@ To reformulate : We know that a single value of $f$ (and thus $n_s$) can be obta
 
 Once we have a probability density for $n_s$ we can compute the 95 % confidence interval of this distribution.
 
-## Generating $f$-$\mu$ distribution
+## Generating $f$- $\mu$ distribution
 We run simulations with different values of $\mu$ to see what frozen fraction is the most likely to happen.
 
 Let $\mu$ be fixed to an arbitrary value. We have a droplet array of `DROPLET_NUMBER`. We estimate the number of active site in each droplet via a poisson law of parameter $\mu$ :
