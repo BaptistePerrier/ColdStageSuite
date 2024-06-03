@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # Using FS010 here
-dataFile = "FS/FS010_1_1.txt"
+dataFile = "data/FS/FS010_1_1.txt"
 SPECIFICSURFACE = 6.1 # m2g-1
 CONCENTRATION = 1 # gL-1
 VOLUME = 20e-9 # Using ColdStage experiments, MUST CHANGE FOR INSEKT EXPERIMENTS
