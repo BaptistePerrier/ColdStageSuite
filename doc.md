@@ -39,7 +39,7 @@ We run simulations with different values of $\mu$ to see what frozen fraction is
 
 Let $\mu$ be fixed to an arbitrary value. We have a droplet array of `DROPLET_NUMBER`. We estimate the number of active site in each droplet via a poisson law of parameter $\mu$ :
 
-&nbsp;&nbsp;&nbsp;&nbsp; $N_{site, i} = X_{P}(\mu)$
+&nbsp;&nbsp;&nbsp;&nbsp; $N_{site, i} = X_{\mathcal{P}}(\mu)$
 
 Then, we consider frozen each droplet that has one or more active site in it (ie $N_{site,i} \geq 1$). The frozen fraction is then computed by $f = \frac{N_{frozen}}{N_{tot}}$.
 
@@ -51,16 +51,16 @@ We repeat the simulation `MU_REPETITION` times to see the most probable distribu
 
 $A$ is assumed to have a gaussian distribution, being the result of uncertainties propagation.
 
-We have $A = S_pCV$, whose uncertainties respectively equal $e(S_p)$, $u(C)$ and $u(V)$. Then propagating the uncertainties give :
+We have $A = S_pCV$, whose uncertainties respectively equal $u(S_p)$, $u(C)$ and $u(V)$. Then propagating the uncertainties give :
 
 &nbsp;&nbsp;&nbsp;&nbsp; $\frac{u(A)}{|A|} = \sqrt{\left( \frac{u(S_p)}{S_p} \right)^2 + \left( \frac{u(C)}{C} \right)^2 + \left( \frac{u(V)}{V} \right)^2}$
 
 &nbsp;&nbsp;&nbsp;&nbsp; $A \sim \mathcal{N}(A, u(A))$
 
 ## Computing $n_s$ distribution
-For a fixed $f$ we know the probability distribution of $\mu$ and those of $A$. We can deduce the probability distribution of $n_s = \frac{\mu}{A}$. Thisis a "*Ratio Distribution*" (cf [Wiki](https://en.wikipedia.org/wiki/Ratio_distribution)) and can be calculated as follows for our two independant variables :
+For a fixed $f$ we know the probability distribution of $\mu$ and those of $A$. We can deduce the probability distribution of $n_s = \frac{\mu}{A}$. This is a "*Ratio Distribution*" (cf [Wiki](https://en.wikipedia.org/wiki/Ratio_distribution)) and can be calculated as follows for our two independant variables :
 
-&nbsp;&nbsp;&nbsp;&nbsp; $p_{n_s}(n_s) = \int_{-\infty}^{+\infty} |A|p_\mu(n_sA)p_A(A)~dA$
+&nbsp;&nbsp;&nbsp;&nbsp; $p_{n_s}(n_s) = \int_{-\infty}^{+\infty} |A|~p_\mu(n_sA)p_A(A)~dA$
 
 *NB : The integral is computed between `0` and `1e-6` for the integration algorithm to converge. With `-np.inf` and `np.inf` the integration yields zero systematically.*
 
